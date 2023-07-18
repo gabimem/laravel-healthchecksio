@@ -1,0 +1,28 @@
+{
+	"name": "gabimem/laravel-healthchecksio",
+	"description": "A healthchecks.io wrapper to monitor scheduled tasks in Laravel.",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Gabimem\\LaravelHealthchecksIO\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Gabriel Memmel",
+			"email": "gabriel@memmel.pro"
+		}
+	],
+	"minimum-stability": "dev",
+	"require": {
+		"php": "^8.1.0",
+		"illuminate/http": "^8.0|^9.0|^10.0"
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Gabimem\\LaravelHealthchecksIO\\ServiceProvider"
+			]
+		}
+	}
+}
