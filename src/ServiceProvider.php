@@ -23,7 +23,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         Event::macro('healthchecks', function (string $jobName) {
             /* @var Event $this */
             return $this
-                ->pingBefore(Healthchecks::getPingUrl($jobName, Healthchecks::COMMAND_START))
+                ->before(fn(Stringable $output) => Healthchecks::ping($jobName, Healthchecks::COMMAND_START, $output))
                 ->onSuccess(fn(Stringable $output) => Healthchecks::ping($jobName, Healthchecks::COMMAND_SUCCESS, $output))
                 ->onFailure(fn(Stringable $output) => Healthchecks::ping($jobName, Healthchecks::COMMAND_FAILURE, $output));
         });

@@ -35,7 +35,7 @@ class Healthchecks
      * Generate the URI to ping
      * @throws \Exception
      */
-    public static function getPingUrl(string $jobName, string $command = null): string
+    protected static function getPingUrl(string $jobName, string $command = null): string
     {
         $jobs = config('healthchecks.jobs');
         $url  = config('healthchecks.url');
